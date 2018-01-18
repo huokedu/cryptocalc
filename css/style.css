@@ -1,1 +1,319 @@
+/* defaults + heading */
 
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
+body {
+    background: #151515;
+    background: linear-gradient(to bottom, #333 0%, #222 100%);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1.35em;
+}
+
+header {
+    width: 100%;
+    height: 8em;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+    font-weight: 100;
+    padding: 1em;
+    float: left;
+}
+
+h2 {
+    display: block;
+    width: 100%;
+    clear: both;
+    font-size: 1.7em;
+    padding:0.5em
+}
+
+@media screen and (max-width: 1280px) {
+    header h1 {
+        width: 100%;
+    }
+}
+
+#prices {
+    float: right;
+    padding-right: 50px;
+}
+
+@media screen and (max-width: 1280px) {
+    #prices {
+        font-size: 1.5em;
+        margin-top: 0;
+        padding-top: 0;
+        padding-right: 0;
+    }
+}
+
+.label:empty {
+    display: block;
+}
+
+.main-wrapper {
+    display: flex;
+}
+
+.main-wrapper * {
+    flex: 1;
+}
+
+
+/* panels */
+
+fieldset {
+    background-color: #333;
+}
+
+.panel {
+    border-radius: 0;
+    background-color: #111;
+    border: none;
+}
+
+.panel-heading {
+    background-color: #555;
+    border-radius: 0px;
+}
+
+.panel-title {
+    font-weight: 300;
+}
+
+label {
+    width: 40%;
+    text-align: center;
+}
+
+#fiat_output_pick,
+#crypto_output_pick {
+    clear: both;
+}
+
+#crypto_output_pick {
+    width: auto;
+    height: 5.5em;
+}
+
+.pick-parent {
+    width: 100%;
+    background-color: transparent;
+}
+
+
+/* inputs */
+
+input {
+    margin: auto;
+    padding: 10px;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 60%;
+    float: right;
+}
+
+@media screen and (max-width: 1280px) {
+    input[type="text"],
+    input[type="number"] {
+        width: 50%;
+    }
+}
+
+textarea,
+input,
+input[type="text"] {
+    border: solid 1px transparent;
+    background: transparent;
+    border-bottom-color: #555;
+}
+
+
+/* error message */
+
+#error_block {
+    display: none;
+    background-color: red;
+    padding: 15px;
+    width: 450px;
+    text-align: center;
+    position: fixed;
+    bottom: 10px;
+    right: calc(50% - 225px);
+    font-size: 1em;
+}
+
+
+/* basics */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 100;
+}
+
+.left_panel ul {
+    padding: 0;
+}
+
+.left_panel ul li {
+    display: block;
+    border: 1px solid #555;
+    border-left: 0px;
+    padding: 0.7em;
+    margin-bottom: 0.6em;
+    overflow: hidden;
+}
+
+.left_panel ul li:nth-child(2) {
+    border-left: 1px solid #555;
+}
+
+.left_panel ul li.label {
+    text-align: right;
+    border: none;
+    font-weight: inherit;
+    font-size: inherit;
+    background-color: transparent;
+}
+
+.left_panel ul li.no-border {
+    border: none;
+}
+
+@media screen and (max-width: 1280px) {
+    .left_panel ul li {
+        padding: 10px 5px;
+        margin-bottom: 5px;
+    }
+}
+
+.left_panel ul.crypto-headers li {
+    border: none;
+    text-align: center;
+    margin: 0;
+}
+
+.left_panel ul,
+.cont_order {
+    clear: both;
+}
+
+@media screen and (max-width: 1280px) {
+    .cont_order {
+        margin-top: 30px;
+    }
+    #crypto_info {
+        margin-bottom: 60px;
+    }
+}
+
+.red {
+    background-color: #99111111;
+    border-bottom-color: red !important;
+}
+
+.green {
+    background-color: #3AB54A11;
+    border-bottom-color: #3AB54A !important;
+}
+
+#totalPrice,
+#totalPriceBudget {
+    display: block;
+    clear: both;
+    float: left;
+    margin: 20px;
+}
+
+
+/* radial button - output currency picker */
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]+label {
+    color: #f2f2f2;
+    float: left;
+}
+
+input[type="radio"]+label span {
+    padding: 2em 1em;
+    background: #232323;
+    cursor: pointer;
+    overflow: auto;
+    display: inline-block;
+    height: 5.5em;
+}
+
+input[type="radio"]:checked+label span {
+    background: #3AB54A11;
+    border-bottom: 1px solid #3AB54A;
+}
+
+label {
+    font-weight: 300;
+}
+
+
+/* output cureency picker wrapper + inner */
+
+.inner {
+    height: 5.5em;
+    display: flex;
+}
+
+.inner .currency-pick {
+    flex: 1;
+}
+
+.wrapper {
+    overflow: hidden;
+    margin-bottom: 5px;
+    height: 5.5em;
+    background: #222;
+}
+
+
+/* footer */
+
+footer {
+    width: 100%;
+}
+
+footer ul {
+    display: flex;
+    padding: 3em;
+    width: 65%;
+    margin: auto;
+}
+
+footer ul li {
+    flex: 1;
+    list-style: none;
+    float: left;
+    display: block;
+    text-align: center;
+}
+
+footer ul li p {
+    text-align: center;
+}
