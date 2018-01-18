@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Document style -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Content -->
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+
+    <!-- Responsivity -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <header>
+        <h1>
+            Crypto portfolio calculator by
+            <strong> Apfel IO </strong>
+        </h1>
+
+        <h1 id="prices">
+            Loading...
+        </h1>
+        </div>
+    </header>
+
+    <main>
+
+        <fieldset class="panel-body pick-parent" onchange="changeCurrentCurrency()">
+
+            <div class="wrapper col-md-12">
+                <div class="inner" id="crypto-picker">
+                </div>
+            </div>
+
+            <div class="wrapper col-md-12">
+                <div class="inner" id="fiat-picker">
+                </div>
+            </div>
+
+        </fieldset>
+
+        <div class="col-md-12 main-wrapper"></div>
+        <div class="col-sm-4 left_panel" id="crypto_info">
+            <ul class="crypto-headers">
+                <li class="label col-md-2 col-xs-2"></li>
+                <li class="col-md-3 col-xs-2" id="cap24hrChange">change</li>
+                <li class="col-md-3 col-xs-4" id="mktcap"> cap </li>
+                <li class="col-md-3 col-xs-3" id="usdPrice"> price</li>
+            </ul>
+            <form>
+                <ul class="items_show" id="items_show">
+                </ul>
+            </form>
+        </div>
+
+        <div class="col-sm-8" id="tools">
+
+            <form class="cont_order">
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">currency outputter</h3>
+                    </div>
+                    <fieldset class="panel-body" onchange="fiatInputter();">
+                        <h2> crypto </h2>
+                        <div id="crypto-outputter">
+                        </div>
+
+                        <h2 id="total_price">total 0.0000 in CZK</h2>
+
+                    </fieldset>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">fiat inputter</h3>
+                    </div>
+                    <fieldset class="panel-body" onchange="recalc()">
+
+                        <h2 id="input_currency_header">input CZK</h2>
+                        <div class="col-md-3 col-xs-6">
+                            <label id="input_currency_label">
+                                CZK
+                            </label>
+                            <input id="input_currency" type="text" value="0">
+                        </div>
+
+                        <h2> % cryptos output </h2>
+                        <div id="items_inputter_percent">
+                        </div>
+
+                        <h2> calculated output </h2>
+                        <div id="items_inputter_output">
+                        </div>
+
+                        <h2 id="total_price_budget">output</h2>
+                    </fieldset>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">fractions</h3>
+                    </div>
+                    <fieldset class="panel-body">
+
+                        <div class="col-md-3 col-xs-6">
+                            <label>BTC</label>
+                            <input id="btcCalc" name="btcCalc" type="text" onchange="calcBtc(1)">
+                        </div>
+
+                        <div class="col-md-3 col-xs-6">
+                            <label>mBTC</label>
+                            <input id="mbtcCalc" name="btcCalc" type="text" onchange="calcBtc(2)">
+                        </div>
+
+                        <div class="col-md-3 col-xs-6">
+                            <label>&micro;BTC</label>
+                            <input id="ubtcCalc" name="btcCalc" type="text" onchange="calcBtc(3)">
+                        </div>
+
+                        <div class="col-md-3 col-xs-6">
+                            <label>sat</label>
+                            <input id="satoshiCalc" name="btcCalc" type="text" onchange="calcBtc(4)">
+                        </div>
+
+                        <div class="col-md-3 col-xs-6">
+                            <label>USD</label>
+                            <input id="usdCalc" name="btcCalc" type="text" onchange="calcBtc(5)">
+                        </div>
+
+                    </fieldset>
+
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <div id="error_block">
+        Hello kind sir. What a beautiful day, ist't it? We appologize for interupting your precious work, but
+        <strong>it seems that you have provided us with input that is of non-numeric value</strong>. Could you please change that
+        input, so we could continue our computations? Thank you in advance and have a blessed day!
+    </div>
+
+    <footer>
+        <ul>
+            <li>
+                <p>Send me &#128151; folks!
+                    <br>
+                    <a href="https://etherscan.io/address/0x27d10a6B10D0FF2B32F1930303AaEcE059C65AD3">ETH</a>
+                    <a href="https://shapeshift.io/shifty.html?destination=0x27d10a6B10D0FF2B32F1930303AaEcE059C65AD3&output=ETH"> SHAPESHIFT </a>
+                    <br>
+                    or a letter! - cechal(at)apfel.cz </a></p>
+            </li>
+        </ul>
+    </footer>
+
+
+    <!-- Functionality -->
+    <script type="text/javascript" src="js/cryptocalc.js"></script>
+
+</body>
+
+</html>
